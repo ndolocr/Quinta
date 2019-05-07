@@ -1,0 +1,236 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Reset
+2.0 - Header
+3.0 - Footer
+4.0 - Body
+
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+1.0 - Reset
+--------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, tt, var, 
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td {
+    border: 0;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 15px 0;
+    color: #333333;
+    font-weight: 400;
+    line-height: 1.5em;
+    font-family: 'Roboto', sans-serif;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+.clear-float{
+    clear: both;
+}
+
+.error-message{
+    background: #e7505a;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+.my-profile-pic{
+    background: #ff0 !important;
+    height:50px !important;
+    width: 50px !important;
+}
+
+image{
+    padding: 2%;
+}
+
+.clear-float{
+    clear: both;
+}
+/* ============================================================================= 
+2.0 Header
+============================================================================= */
+.menu{
+    border-bottom: solid 1px #eeeeee;
+}
+
+.navbar-social{
+    text-align: right;
+}
+
+.navbar-social li a{
+    color: #FFFFFF;
+    float: right;
+}
+
+.navbar-social li a:hover{
+    color: #333333;
+}
+
+.slideshow{
+    background: #eeeeee;
+    height: 450px;   
+    overflow: hidden;
+}
+
+.slideshow h1{
+    font-weight: bold;
+    margin-top: 200px;
+    text-align: center;
+}
+
+.slideshow img{
+    height:450px;
+    width: 100%;
+    z-index: 100;
+}
+
+.social-media{
+    background: #333333;
+}
+
+.upper-bar{
+    background: #eee;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    
+}
+
+/*--------------------------------------------------------------
+3.0 - Footer
+--------------------------------------------------------------*/
+.site-footer{
+    background: #D4D4D4;
+    background: hsl(37, 0%, 83%);
+    margin-top: 10px;
+    max-width: 100%;
+}
+
+.site-info{
+    max-width: 100%;
+    border-top: solid 1px;
+    border-color: #C7C7C7;
+    border-color: hsl(36, 0%, 78%);
+    text-align: center;
+    padding: 2em 0;
+    color: #333333;
+    color: hsl(0, 100%, 10%);
+}
+
+.site-info a{
+    text-decoration: none;
+    color: #333333;
+    color: hsl(0, 100%, 10%);
+   
+}
+.footer-navigation {
+    font-family: 'Lato', sans-serif;
+    position: relative;
+    text-transform: uppercase;
+    overflow: hidden;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/*--------------------------------------------------------------
+4.0 - Body
+--------------------------------------------------------------*/
+
+.next{
+    float: right;
+}
+
+.next a{
+    color: #FFFFFF;
+    font-weight: normal;
+}
+
+.title{
+    float: left;
+    text-transform: uppercase;
+}
+
+.product-cost{
+    padding: 10px;
+}
+
+.product-crossed{
+    padding: 10px;
+    text-decoration: line-through;
+}
+
+.product-image{
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;   
+}
+
+.product-image img{
+    max-height: 100%;
+    max-width: 100%;
+    transition: 0.75s;
+}
+
+.product-image:hover img{
+    transform: scale(1.2);
+}
+
+.product-item{
+    border: solid 1px #eeeeee;    
+}
+
+.product-name{
+    background: #333333;
+    height: 30px;
+    overflow: hidden;
+    padding: 10px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    
+}
+
+.product-name a{
+    color: #FFFFFF;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.product-name a:hover{
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+.product-title-bar{
+    background: #004274;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    
+}

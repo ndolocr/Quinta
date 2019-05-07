@@ -1,0 +1,350 @@
+@charset "utf-8";
+/* CSS Document *
+    Created on : FEB 14, 2019, 10:55:06 PM
+    Author     : Quinta
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Reset
+2.0 - Header
+3.0 - Left Column
+4.0 - Right Column
+5.0 - Footer
+6.0 - 
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+1.0 - Reset
+--------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, tt, var, 
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td {
+    border: 0;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 15px 0;
+    color: #333333;
+    font-weight: 400;
+    line-height: 1.5em;
+    font-family: 'Roboto', sans-serif;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+.clear-float{
+    clear: both;
+}
+
+.error-message{
+    background: #e7505a;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+.my-profile-pic{
+    background: #ff0 !important;
+    height:50px !important;
+    width: 50px !important;
+}
+
+image{
+	padding: 2%;
+}
+
+/*--------------------------------------------------------------
+2.0 - Header
+--------------------------------------------------------------*/
+.admin-information{
+    float:right;    
+    padding: 1%;   
+    width: 20%;
+}
+
+.admin-name{
+    float: left;
+    margin-left: 2%;
+}
+
+.logo{    
+    float:left;
+    padding: 1%; 
+}
+
+.menu-bar{
+    background: #2b3643;
+    color: #FFFFFF;
+    padding: 1%;
+}
+
+.menu-bar a{
+    color: #FFFFFF;
+}
+
+.menu-bar a:hover{
+    color: #9E9E9E;
+    text-decoration: none;
+}
+
+.profile-pic{
+    background: #FFFFFF;
+    float: left;
+    height: 25px;
+    width: 25px;
+    
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+/*--------------------------------------------------------------
+3.0 - Left Column
+--------------------------------------------------------------*/
+.active{
+    background: #36c6d3;
+    color: #FFFFFF;
+}
+
+.active a{
+    color: #FFFFFF !important;
+}
+
+.dashboard{
+    border-bottom: solid 1px #4e5c6f;        
+    display: block;
+    padding: 5%;
+}
+
+.dashboard a{
+    color: #708096 !important;
+}
+
+
+.left-column{
+    background: #364150;
+}
+
+.main-page-content{
+    padding: 2%;    
+}
+
+.menubox{
+    border-bottom: solid 1px #4e5c6f;    
+    color: #708096;
+    padding: 5%;    
+}
+
+.menubox ul li a{
+    color: #b4bcc8;
+    padding-left: 15px;
+}
+
+.menubox .menu-title{
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.menu-title{
+    display: block;
+    margin-left: -5%;
+    margin-right: -5%;
+    padding: 5%;
+}
+
+.searchbar{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.searchbutton{
+    visibility: hidden;
+}
+
+.searchtext{
+    background: #364150;
+    border: none;
+    border-bottom: solid 1px #4e5c6f;
+    color: #4e5c6f;
+}
+
+.searchtext:active,
+.searchtext:focus{
+    border: none;
+}
+
+/*--------------------------------------------------------------
+4.0 - Right Column
+--------------------------------------------------------------*/
+
+table img .img-show-admin {
+    background: #FF0;
+    border: solid 1px #F00;
+}
+
+/*Error messages*/
+.city-error-message,
+.address-error-message,
+.country-error-message,
+.password-error-message,
+.telephone-error-message,
+.last-name-error-message,
+.first-name-error-message,
+.middle-name-error-message,
+.email-address-error-message{
+    color: #F00;
+    float: left;
+    height: 34px;
+    padding-left: 1%;
+    width: 30%;
+}
+
+.input-button{
+    background: #28a745;
+    color: #FFFFFF;
+    float: right;
+    
+    width: 20%;
+    
+    border-radius: 5px !important;
+    -moz-border-radius: 5px !important;
+    -webkit-border-radius: 5px !important;
+}
+
+.input-controls{    
+    margin: 1%;    
+    width: 100%;
+}
+
+.input-text{
+    color: #999999;
+    height: 34px;    
+    width: 100%;
+}
+
+.control{
+    background: #fff;
+    float: left;
+    width: 45%;
+}
+
+.description{
+    width: 100%;
+    height: 100px;
+}
+
+.description-control{
+    background: #fff;
+    float: left;
+    width: 65%;
+}
+
+.control-button{    
+    margin: 0 auto;
+}
+
+.label{
+    background: #999999;
+    color: #FFFFFF;
+    float: left;
+    height: 34px;
+    width: 20%;
+}
+
+.description-label{
+    background: #999999;
+    color: #FFFFFF;
+    float: left;
+    height: 34px;
+    text-align: center;
+    width: 65%;
+}
+
+.middle-box{
+    border: solid 1px #EEEEEE;
+    padding: 1%;
+}
+
+.middle-box table{
+    width: 100%;
+}
+
+.right-column{
+    background: #FFFFFF;
+}
+
+.tree{
+    border-bottom: solid 1px #eeeeee;
+}
+
+.tree ul li{
+    color: #999999;
+    float: left;
+    list-style: none;
+    padding: 1%;
+}
+
+.tree ul li a{
+    color: #999999;
+}
+
+.profile-image{    
+    overflow: hidden;
+}
+
+.profile-image img{
+    width: 100%;
+}
+
+.edit-image{   
+    float: left;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+.edit-image image{
+    margin: 0 auto;
+    text-align: center;
+}
+.edit-image img{
+    border: solid 5px #EEEEEE;
+    width: 50%;
+}
+
+.restock{
+    text-align: center;
+    width: 100%;
+}
+
+/*--------------------------------------------------------------
+5.0 - Footer
+--------------------------------------------------------------*/
+.footer{
+    background: #364150;
+    color: #FFFFFF;
+    padding: 1%;
+}
+/*--------------------------------------------------------------
+6.0 - 
+--------------------------------------------------------------*/
