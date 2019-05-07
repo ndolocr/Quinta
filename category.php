@@ -78,15 +78,19 @@
                                     
                                 </div>
                             </div>
-                        </div>
+                        </div>                                                
+                        
                         <?php
                     }
+                    ?>
+            </div>
+            <?php
         }
         
     }else{
         header("Location:idex.php");
-    }
-    
-    
-    
+    }            
+?>
+<?php
+    include('include/footer.php');
 ?>
