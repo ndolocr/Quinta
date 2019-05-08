@@ -176,6 +176,7 @@ image{
 
 .product-cost{
     padding: 10px;
+    height: 50px;
 }
 
 .product-crossed{
@@ -201,7 +202,8 @@ image{
 }
 
 .product-item{
-    border: solid 1px #eeeeee;    
+    border: solid 1px #eeeeee; 
+    margin-bottom: 20px;
 }
 
 .product-name{

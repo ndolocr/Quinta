@@ -2,6 +2,8 @@
     include('dbfiles/dbconnect.php');
     include('include/header.php');
     
+    $num_of_row = 0;
+    
     //Getting Category ID
     if(isset($_GET['id'])){
         $id = $_GET['id'];
@@ -12,7 +14,7 @@
             $category_name = $category_row['categoryName'];
         }
         
-        $product_query = "SELECT * FROM product WHERE categoryId = '$id' ORDER BY productName ASC LIMIT 4";
+        $product_query = "SELECT * FROM product WHERE categoryId = '$id' ORDER BY productName ASC";
         $product_result = mysqli_query($connect, $product_query);
         $product_num_rows = mysqli_num_rows($product_result);
         
@@ -29,7 +31,10 @@
                 <!-- END CATEGORY TITLE -->
             </div>
             <!-- END ROW -->
-
+            
+            
+            
+            
             <!-- BEGIN ROW -->
             <div class="row"> 
                 <?php
@@ -37,7 +42,7 @@
                         ?>
                         <!-- BEGIN CATEGORY ITEMS -->
                         <div class="col-md-3">
-                            <div class="product-item">
+                             
                                 <a href="product.php?id=<?php echo $product_row['productId']; ?>">
                                     <div class="product-image">
                                         <img src="admin/images/uploads/products/<?php echo $product_row['image']; ?>" />
@@ -87,9 +92,7 @@
             <?php
         }
         
-    }else{
-        header("Location:idex.php");
-    }            
+    }           
 ?>
 <?php
     include('include/footer.php');
