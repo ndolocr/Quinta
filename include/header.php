@@ -94,7 +94,7 @@
             
             <!-- BEGIN MENU ROW-->
             <div class="row menu">
-                <div class="col-sm-12 col-md-10">
+                <div class="col-sm-12 col-md-8">
                     <ul class="nav navbar-nav">
                         <li> <a href="index.php"> Home </a> </li>
                         <li> <a href=""> About us </a> </li>
@@ -102,16 +102,33 @@
                     </ul>
                 </div>
 
-                <div class="col-sm-12 col-md-2 right">
-                    <ul class="nav navbar-nav">
-                        <li> </li>
-                        <li> <a href="login.php">Login </a> </li>
-                        <li>  
-                            <a href="#">
-                                <i class="fa fa-shopping-cart fa-2x"></i>
-                            </a>
-                        </li>
-                    </ul>
+                <div class="col-sm-12 col-md-4" style="background: #ff0;">
+                    <?php
+                        if(isset($_SESSION['login'])){
+                    ?>
+                        <ul class="nav navbar-nav" style="text-align: right;">
+                            <li style="padding-top: 12px; font-weight: bold;">
+                                Welcome: <?php echo $_SESSION['firstname'], " ", $_SESSION['lastname'] ?>
+                            </li>
+
+                            <li style="font-weight: bold;" >  
+                                <a href="#"> <i class="fa fa-shopping-cart fa-1x"></i> </a>
+                            </li>
+
+                            <li style="font-weight: bold;"> <a href="logout.php"> <i class="fa fa-shopping-lock fa-1x"></i> Logout </a> </li>
+                        </ul>
+
+                    <?php 
+                        }else{
+                            ?>
+                            <ul class="nav navbar-nav">                                
+                                <li style="font-weight: bold;" > <a href="login.php">Login </a> </li>
+                                <li style="font-weight: bold;"> <a href="register.php"> Register </a> </li>
+                            </ul>
+                            <?php
+                        }
+
+                    ?>
                 </div>
             </div>
             <!-- END MENU ROW-->

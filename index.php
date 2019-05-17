@@ -1,4 +1,6 @@
 <?php
+    SESSION_START();
+    
     include('dbfiles/dbconnect.php');
     include('include/header.php');
     
