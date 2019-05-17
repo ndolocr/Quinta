@@ -184,6 +184,12 @@ image{
     text-decoration: line-through;
 }
 
+.product-details{
+    background: #ff0;
+    border-bottom: solid 1px #C7C7C7;
+    padding: 10px;
+}
+
 .product-image{
     height: 100%;
     overflow: hidden;

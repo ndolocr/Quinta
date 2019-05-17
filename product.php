@@ -58,7 +58,29 @@
             
             <!-- START DETAILS SECTION -->
             <div class="col-md-9">
-                 
+                <!-- START PRODUCT INFORMATION -->
+                <div class="product-info">                    
+                    <table style="width:90%;">
+                        <tr>
+                            <td class="product-details"><h1> <?php echo $product_name; ?> </h1></td>                            
+                        </tr>
+                        <tr>
+                            <td class="product-details" style="font-weight: bold;"> <?php echo "Category: ", $category_name; ?></td>
+                        </tr>
+                        <tr>
+                            <td class="product-details"><?php echo $product_description; ?></td>
+                            <td class="product-details">
+                                <?php echo"Brand: ", $product_brand; ?></br>
+                                <?php echo"Color: ", $product_color; ?>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- END PRODUCT INFORMATION -->
             </div>
             <!-- END DETAILS SECTION -->
         </div>
