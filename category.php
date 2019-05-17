@@ -42,58 +42,56 @@
                         ?>
                         <!-- BEGIN CATEGORY ITEMS -->
                         <div class="col-md-3">
-                             
-                                <a href="product.php?id=<?php echo $product_row['productId']; ?>">
-                                    <div class="product-image">
-                                        <img src="admin/images/uploads/products/<?php echo $product_row['image']; ?>" />
-                                    </div>
-                                </a>
-                                
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="product-name">
-                                            <a href="product.php?id=<?php echo $product_row['productId']; ?>"> <?php echo $product_row['productName'] ; ?> </a>
-                                        </div>
-                                    </div>
+                            <a href="product.php?id=<?php echo $product_row['productId']; ?>">
+                                <div class="product-image">
+                                    <img src="admin/images/uploads/products/<?php echo $product_row['image']; ?>" />
                                 </div>
+                            </a>
                                 
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="product-cost">
-                                            <?php
-                                                $sellingPrice = $product_row['sellingPrice'];
-                                                if($sellingPrice){
-                                                    echo "Now Ksh. ".$sellingPrice;
-                                                }                                                                                                    
-                                            ?>
-                                        </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="product-name">
+                                        <a href="product.php?id=<?php echo $product_row['productId']; ?>"> <?php echo $product_row['productName'] ; ?> </a>
                                     </div>
-                                    
-                                    <div class="col-sm-6">
-                                        <div class="product-crossed">
-                                            <?php
-                                                 $discount = $product_row['discount'];
-                                                if($discount>0){
-                                                    $newPrice = $sellingPrice + $discount;
-                                                    echo "Was Ksh. ".$newPrice;
-                                                }                                                   
-                                            ?>
-                                        </div>
-                                    </div>
-                                    
                                 </div>
                             </div>
-                        </div>                                                
-                        
+                                
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="product-cost">
+                                        <?php
+                                            $sellingPrice = $product_row['sellingPrice'];
+                                            if($sellingPrice){
+                                                echo "Now Ksh. ".$sellingPrice;
+                                            }                                                                                                    
+                                        ?>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6">
+                                    <div class="product-crossed">
+                                        <?php
+                                             $discount = $product_row['discount'];
+                                            if($discount>0){
+                                                $newPrice = $sellingPrice + $discount;
+                                                echo "Was Ksh. ".$newPrice;
+                                            }                                                   
+                                        ?>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
                         <?php
                     }
-                    ?>
+                ?>
             </div>
             <?php
         }
         
     }           
 ?>
+
 <?php
     include('include/footer.php');
 ?>
