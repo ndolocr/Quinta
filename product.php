@@ -1,7 +1,7 @@
 <?php
     include('dbfiles/dbconnect.php');
     include('include/header.php');
-    
+
     //Getting Product ID
     if(isset($_GET['id'])){
         $id = $_GET['id'];
@@ -30,6 +30,13 @@
             while($category_row = mysqli_fetch_assoc($category_result)){
                 $category_name = $category_row['categoryName'];
             }
+        }
+
+        //Processing Purchased Goods
+        if(isset($_POST['submit'])){
+            //Check if customer is logged in
+
+            
         }
         ?>
         <!-- BEGIN ROW -->
@@ -77,22 +84,32 @@
                             <td class="product-details"><?php echo $product_description; ?></td>
                         </tr>
                         <tr>
+                            <?php 
+                                if($product_sellingPrice){
+                            ?>
                             <td class="product-details" > 
                                 <div class="price-selling"> 
                                     <?php echo "Ksh. ", $product_sellingPrice; ?> 
                                 </div>                               
-                                
-                                <div class="discount"> 
-                                    <?php echo "Ksh. ", $product_discount; ?> 
-                                </div>
-
+                                <?php
+                                    if($product_discount){
+                                ?>
+                                    <div class="discount"> 
+                                        <?php echo "Ksh. ", $product_discount; ?> 
+                                    </div>
+                                <?php
+                                    }
+                                ?>
                                 <div class="buying-form">
-                                    <form>
+                                    <form method="POST" action="product.php">
                                         <input type="submit" name="submit" value="BUY NOW" class="btn yellow sbold uppercase">
                                     </form>
                                 </div>
 
                                 <div class="clear-float"> </div>
+                            <?php 
+                                }
+                            ?>
                             </td>
                         </tr>
                     </table>

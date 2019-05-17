@@ -65,7 +65,7 @@
             
             <!-- BEGIN ROW -->
             <div class="row upper-bar">
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     AZURY Traders
                 </div>
                 
@@ -82,23 +82,35 @@
                     </form>
                 </div>
                 
-                <div class="col-sm-1">
+                <!--<div class="col-sm-1">-->
                     <!-- SHOPPING CART LINK -->
-                    <a href="#">
+                    <!--<a href="#">
                         <i class="fa fa-shopping-cart fa-2x"></i>
-                    </a>
+                    </a>-->
                     <!-- SHOPPING CART LINK -->
                 </div>
-            </div>
+            
             <!-- END ROW -->
             
             <!-- BEGIN MENU ROW-->
             <div class="row menu">
-                <div class="col-sm-12">
+                <div class="col-sm-12 col-md-10">
                     <ul class="nav navbar-nav">
                         <li> <a href="index.php"> Home </a> </li>
                         <li> <a href=""> About us </a> </li>
                         <li> <a href=""> Contact Us </a> </li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-12 col-md-2 right">
+                    <ul class="nav navbar-nav">
+                        <li> </li>
+                        <li> <a href="login.php">Login </a> </li>
+                        <li>  
+                            <a href="#">
+                                <i class="fa fa-shopping-cart fa-2x"></i>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
