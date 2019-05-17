@@ -185,9 +185,8 @@ image{
 }
 
 .product-details{
-    background: #ff0;
     border-bottom: solid 1px #C7C7C7;
-    padding: 10px;
+    padding: 7px;
 }
 
 .product-image{
@@ -241,4 +240,30 @@ image{
     margin-top: 10px;
     padding: 10px;
     
+}
+
+.buying-form{
+    float: left;
+    margin-right: 50px;
+}
+
+.discount{
+    border: solid 2px #eeeeee;
+    float: left;
+    margin-right: 50px;
+    padding: 2px 5px 2px 5px;
+    text-align: center;
+    text-decoration: line-through;
+    max-width: 150px;
+}
+
+.price-selling{
+    float: left;
+    font-weight: bold;
+    margin-right: 50px;
+    padding-top: 2px;
+}
+
+.clear-float{
+    clear: both;
 }

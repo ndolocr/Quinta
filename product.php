@@ -62,21 +62,38 @@
                 <div class="product-info">                    
                     <table style="width:90%;">
                         <tr>
-                            <td class="product-details"><h1> <?php echo $product_name; ?> </h1></td>                            
+                            <td class="product-details">
+                                <h1> <?php echo $product_name; ?> </h1>
+                    
+                                <?php echo"Brand: ", $product_brand; ?></br>
+                                <?php echo"Color: ", $product_color; ?>
+                            </td>
+                                                        
                         </tr>
                         <tr>
                             <td class="product-details" style="font-weight: bold;"> <?php echo "Category: ", $category_name; ?></td>
                         </tr>
                         <tr>
                             <td class="product-details"><?php echo $product_description; ?></td>
-                            <td class="product-details">
-                                <?php echo"Brand: ", $product_brand; ?></br>
-                                <?php echo"Color: ", $product_color; ?>
-                                
-                            </td>
                         </tr>
                         <tr>
-                            <td></td>
+                            <td class="product-details" > 
+                                <div class="price-selling"> 
+                                    <?php echo "Ksh. ", $product_sellingPrice; ?> 
+                                </div>                               
+                                
+                                <div class="discount"> 
+                                    <?php echo "Ksh. ", $product_discount; ?> 
+                                </div>
+
+                                <div class="buying-form">
+                                    <form>
+                                        <input type="submit" name="submit" value="BUY NOW" class="btn yellow sbold uppercase">
+                                    </form>
+                                </div>
+
+                                <div class="clear-float"> </div>
+                            </td>
                         </tr>
                     </table>
                 </div>
