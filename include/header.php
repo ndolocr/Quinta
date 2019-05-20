@@ -94,7 +94,7 @@
             
             <!-- BEGIN MENU ROW-->
             <div class="row menu">
-                <div class="col-sm-12 col-md-8">
+                <div class="col-sm-12 col-md-9">
                     <ul class="nav navbar-nav">
                         <li> <a href="index.php"> Home </a> </li>
                         <li> <a href=""> About us </a> </li>
@@ -102,20 +102,24 @@
                     </ul>
                 </div>
 
-                <div class="col-sm-12 col-md-4" style="background: #ff0;">
+                <div class="col-sm-12 col-md-3">
                     <?php
                         if(isset($_SESSION['login'])){
                     ?>
                         <ul class="nav navbar-nav" style="text-align: right;">
-                            <li style="padding-top: 12px; font-weight: bold;">
-                                Welcome: <?php echo $_SESSION['firstname'], " ", $_SESSION['lastname'] ?>
+                            <li style="color:#999999; font-weight: bold; padding-top: 12px;">
+                                Welcome: <?php echo $_SESSION['firstname'] ?>                                
+                            </li>
+
+                            <li style="font-weight: bold;"> 
+                                <a href="logout.php" style="color:#999999;"> <i class="fa fa-shopping-lock fa-1x"></i> Logout </a> 
                             </li>
 
                             <li style="font-weight: bold;" >  
-                                <a href="#"> <i class="fa fa-shopping-cart fa-1x"></i> </a>
+                                <a href="#" style="color:#999999;"> <i class="fa fa-shopping-cart fa-1x"></i>  
+                                    <div class="noofitems"> 1 </div>
+                                </a>
                             </li>
-
-                            <li style="font-weight: bold;"> <a href="logout.php"> <i class="fa fa-shopping-lock fa-1x"></i> Logout </a> </li>
                         </ul>
 
                     <?php 

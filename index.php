@@ -1,6 +1,6 @@
-<?php
-    SESSION_START();
-    
+<?php include('include/session.php'); ?>
+
+<?php   
     include('dbfiles/dbconnect.php');
     include('include/header.php');
     

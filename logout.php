@@ -4,6 +4,7 @@
     
     //Unset all session variables
     $_SESSION = array();
+    $_SESSION['login'] = false;
     
     //Destroy the session cookie
     if(isset($_COOKIE[session_name()])){

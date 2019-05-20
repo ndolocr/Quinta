@@ -1,6 +1,19 @@
+<?php include('include/session.php'); ?>
 <?php
     include('dbfiles/dbconnect.php');
     include('include/header.php');
+
+    //Processing Purchased Goods
+    if(isset($_POST['submit'])){
+        //Check if customer is logged in
+        if($_SESSION['login']){
+            header('Location: index.php');
+            die;
+        }else{
+            header('Location: login.php');
+            die;
+        }
+    }
 
     //Getting Product ID
     if(isset($_GET['id'])){
@@ -31,13 +44,7 @@
                 $category_name = $category_row['categoryName'];
             }
         }
-
-        //Processing Purchased Goods
-        if(isset($_POST['submit'])){
-            //Check if customer is logged in
-
-            
-        }
+       
         ?>
         <!-- BEGIN ROW -->
         <div class="row">
