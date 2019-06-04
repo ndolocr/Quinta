@@ -103,7 +103,7 @@
             $admin_num_rows = mysqli_num_rows($admin_result);
 
             if($admin_num_rows==0){
-                $adminId = 0;
+                $adminId = 1;
             }else{
                 while($admin_row = mysqli_fetch_assoc($admin_result)){
                     $admin_id = $admin_row['adminId'];

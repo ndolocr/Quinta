@@ -280,3 +280,7 @@ li a .noofitems {
     border-radius: 50px;
 }
 
+.prod_image img{
+    width: 40px;
+}
+

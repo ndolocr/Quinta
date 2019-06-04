@@ -8,8 +8,36 @@
         //include('include/session.php');
         
         if($_SESSION['login']){
-            header('Location: cart.php?id=1');
-            die;
+
+            //Get Post information
+            $productId = $_POST['product_id'];
+            $customerId = $_SESSION['id'];
+            
+            //Determine new records Id
+            $cart_search_query = "SELECT * FROM cart ORDER BY cartId DESC LIMIT 1";
+            $cart_search_result = mysqli_query($connect, $cart_search_query) or die("Error getting Cart records");
+            $num_rows = mysqli_num_rows($cart_search_result);
+            
+            //Determine Card Id
+            if($num_rows){
+                while($cart_row = mysqli_fetch_assoc($cart_search_result)){
+                    $cart_id = $cart_row['cartId'];
+                    $cartId = $cart_id+1;
+                }
+            }else{
+                $cartId = 1;
+
+            }
+
+            //Insert record in cart table            
+            $cart_query = "INSERT INTO cart "
+            ."(cartId, customerId, productId) "
+            ."VALUES "
+            ."('$cartId', '$customerId', '$productId')";
+
+            $cart_result = mysqli_query($connect, $cart_query) or die("Error Saving Cart Record!");
+
+            header('Location: cart.php');            
         }else{
             header('Location: login.php');
             die;
@@ -26,7 +54,7 @@
         $product_query = "SELECT * FROM product WHERE productId='$id'";
         $product_result = mysqli_query($connect, $product_query) or die("Unable to get Product records");
         
-        while($product_row = mysqli_fetch_assoc($product_result)){            
+        while($product_row = mysqli_fetch_assoc($product_result)){               
             $product_size = $product_row['size'];
             $product_brand = $product_row['brand'];
             $product_color = $product_row['color'];
@@ -114,6 +142,8 @@
                                 <div class="buying-form">
                                     <form method="POST" action="product.php">
                                         <input type="submit" name="submit" value="BUY NOW" class="btn yellow sbold uppercase">
+
+                                        <input type="text" name="product_id" value="<?php echo $product_id ?>">
                                     </form>
                                 </div>
 

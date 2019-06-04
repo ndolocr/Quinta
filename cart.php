@@ -1,32 +1,21 @@
-<?php //include('include/session.php'); ?>
+<?php include('include/session.php'); ?>
 
-<?php
-    //Processing Purchased Goods
-    if(isset($_POST['submit'])){
-        //Check if customer is logged in
-        include('include/session.php');
-        
-        if($_SESSION['login']){
-            header('Location: cart.php');
-            die;
-        }else{
-            header('Location: login.php');
-            die;
-        }
-    }
-
+<?php    
     include('dbfiles/dbconnect.php');
     include('include/header.php');
 
 
     //Getting Product ID
-    if(isset($_GET['id'])){
-        $id = $_GET['id'];
+    if(isset($_SESSION['id'])){
+        $id = $_SESSION['id'];
         
-        $product_query = "SELECT * FROM product WHERE productId='$id'";
-        $product_result = mysqli_query($connect, $product_query) or die("Unable to get Product records");
         
-        while($product_row = mysqli_fetch_assoc($product_result)){            
+        $query = "SELECT * FROM cart WHERE customerId='$id'";
+        $result = mysqli_query($connect, $query) or die("Unable to get cart records");
+        
+        /*
+        while($row = mysqli_fetch_assoc($result)){            
+            
             $product_size = $product_row['size'];
             $product_brand = $product_row['brand'];
             $product_color = $product_row['color'];
@@ -48,14 +37,14 @@
                 $category_name = $category_row['categoryName'];
             }
         }
-       
+        */
         ?>
         <!-- BEGIN ROW -->
         <div class="row">
             <!-- BEGIN CATEGORY TITLE -->
             <div class="col-sm-12 product-title-bar">
                 <div class="title">
-                    <?php echo $product_name; ?>
+                    
                 </div>                      
             </div>
             <!-- END CATEGORY TITLE -->
@@ -65,52 +54,60 @@
         <!-- BEGIN ROW -->
         <div class="row">
             <!-- START IMAGE SECTION -->
-            <div class="col-md-3">
+            <!--<div class="col-md-3">
                 <div class="product-item">
                     <div class="product-image">
-                        <img src="admin/images/uploads/products/<?php echo $product_image; ?>" />
+                        
                     </div>
                 </div>
-            </div>
+            </div>-->
             <!-- END IMAGE SECTION -->
             
             <!-- START DETAILS SECTION -->
-            <div class="col-md-9">
+            <div class="col-md-12">
                 <!-- START PRODUCT INFORMATION -->
                 <div class="product-info">                    
-                    <table style="width:90%;">
+                    <table table-striped table-bordered table-hover style="width:100%;"> 
                         <tr>
-                            <td class="product-details">
-                                <h1> <?php echo $product_name; ?> </h1>
-                    
-                                <?php echo"Brand: ", $product_brand; ?></br>
-                                <?php echo"Color: ", $product_color; ?>
-                            </td>
-                                                        
-                        </tr>
+                            <th>  </th>
+                            <th> Product Name </th>
+                            <th> Brand </th>
+                            <th> Size </th>
+                            <th> Color </th>
+                            <th> Cost </th>
+                            <th> No of Items </th>
+                            <th> Remove Item </th>
+
+                        </tr>                       
+                        <?php
+                            while($row = mysqli_fetch_assoc($result)){
+                                $product_id = $row['productId'];
+
+                                //Getting Product Information
+                                $product_query = "SELECT * FROM product WHERE productId = '$product_id'";
+                                $product_result = mysqli_query($connect, $product_query) or die("Error Getting Product Information");
+
+                                //Getting Information from Product Table
+                                while($product_row = mysqli_fetch_assoc($product_result)){
+                                    ?>
+                                    <tr>
+                                        <td > <div class="prod_image"> <img src="admin/images/uploads/products/<?php echo $product_row['image']; ?>" /> </div> </td>
+                                    
+                                        <td> <?php echo $product_row['productName'] ?> </td>
+                                        <td> <?php echo $product_row['brand'] ?> </td>
+                                        <td> <?php echo $product_row['size'] ?> </td>
+                                        <td> <?php echo $product_row['color'] ?> </td>
+                                        <td> <?php echo $product_row['sellingPrice'] ?> </td>
+                                    
+                                        
+                                    </tr>
+                                    <?php
+                                }
+                            }
+                        ?>
                         <tr>
-                            <td class="product-details" style="font-weight: bold;"> <?php echo "Category: ", $category_name; ?></td>
-                        </tr>
-                        <tr>
-                            <td class="product-details"><?php echo $product_description; ?></td>
-                        </tr>
-                        <tr>
-                            <?php 
-                                if($product_sellingPrice){
-                            ?>
-                            <td class="product-details" > 
-                                <div class="price-selling"> 
-                                    <?php echo "Ksh. ", $product_sellingPrice; ?> 
-                                </div>                               
-                                <?php
-                                    if($product_discount){
-                                ?>
-                                    <div class="discount"> 
-                                        <?php echo "Ksh. ", $product_discount; ?> 
-                                    </div>
-                                <?php
-                                    }
-                                ?>
+                            <td>
+                            
                                 <div class="buying-form">
                                     <form method="POST" action="product.php">
                                         <input type="submit" name="submit" value="BUY NOW" class="btn yellow sbold uppercase">
@@ -118,9 +115,7 @@
                                 </div>
 
                                 <div class="clear-float"> </div>
-                            <?php 
-                                }
-                            ?>
+                            
                             </td>
                         </tr>
                     </table>
