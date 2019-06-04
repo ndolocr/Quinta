@@ -1,21 +1,21 @@
-<?php //include('include/session.php'); ?>
+<?php include('include/session.php'); ?>
 
 <?php
+    include('dbfiles/dbconnect.php');
     //Processing Purchased Goods
     if(isset($_POST['submit'])){
         //Check if customer is logged in
-        include('include/session.php');
+        //include('include/session.php');
         
         if($_SESSION['login']){
-            header('Location: cart.php');
+            header('Location: cart.php?id=1');
             die;
         }else{
             header('Location: login.php');
             die;
         }
     }
-
-    include('dbfiles/dbconnect.php');
+    
     include('include/header.php');
 
 

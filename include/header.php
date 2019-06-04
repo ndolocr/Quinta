@@ -127,7 +127,7 @@
                             ?>
                             <ul class="nav navbar-nav">                                
                                 <li style="font-weight: bold;" > <a href="login.php">Login </a> </li>
-                                <li style="font-weight: bold;"> <a href="register.php"> Register </a> </li>
+                                <li style="font-weight: bold;"> <a href="registration.php"> Register </a> </li>
                             </ul>
                             <?php
                         }
