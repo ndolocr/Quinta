@@ -18,7 +18,9 @@
         <meta content="" name="author" />
         
         <!-- BEGIN CSS FILES -->
-        <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />       
+        <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> 
+        <link href="../assets/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+        <link href="../assets/font-awesome/css/font-awesome.css" type="text/css" rel="stylesheet" />      
         <link href="../assets/css/login-4.css" rel="stylesheet" type="text/css" />
         <link href="../assets/css/components.css" rel="stylesheet" type="text/css" />
         <link href="../assets/css/components.min.css" rel="stylesheet" type="text/css" />

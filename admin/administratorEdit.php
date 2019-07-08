@@ -34,6 +34,7 @@
             $first_name = $row['firstName'];
             $middle_name = $row['middleName'];
             $email_address = $row['emailAddress'];            
+            
             //Access levels
             $admin_add = $row['admin_add']; 
             $admin_edit = $row['admin_edit'];
