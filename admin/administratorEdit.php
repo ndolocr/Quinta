@@ -34,6 +34,35 @@
             $first_name = $row['firstName'];
             $middle_name = $row['middleName'];
             $email_address = $row['emailAddress'];            
+            //Access levels
+            $admin_add = $row['admin_add']; 
+            $admin_edit = $row['admin_edit'];
+            $admin_delete = $row['admin_delete'];
+            $admin_view_all = $row['admin_view_all'];
+            $admin_view_single = $row['admin_view_single'];
+
+            $category_add = $row['category_add'];
+            $category_edit = $row['category_edit'];
+            $category_delete = $row['category_delete'];
+            $category_view_all = $row['category_view_all'];
+            $category_view_single = $row['category_view_single'];
+
+            $product_add = $row['product_add'];
+            $product_edit = $row['product_edit'];
+            $product_delete = $row['product_delete'];
+            $product_view_all = $row['product_view_all'];
+            $product_view_single = $row['product_view_single'];
+
+            $slideshow_add = $row['slideshow_add'];
+            $slideshow_edit = $row['slideshow_edit'];
+            $slideshow_delete = $row['slideshow_delete'];
+            $slideshow_view_all = $row['slideshow_view_all'];
+            $slideshow_view_single = $row['slideshow_view_single'];
+
+            $stock_add = $row['stock_add'];
+
+            $customer_view_all = $row['customer_view_all'];
+            $customer_view_single = $row['customer_view_single'];
         }
     }
     
@@ -253,10 +282,453 @@
                             </div>
                             <!-- END INPUT CONTROL -->
 
-                            
+                            <!-- BEGIN ADMINISTRATOR ACCESS LEVELS -->
+                            <table class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <td colspan="7" style="font-weight: bold; text-align: center;">
+                                            Administrator Access Levels
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th> # </th>
+                                        <th> Admin </th>
+                                        <th> Category </th>
+                                        <th> Product </th>
+                                        <th> Slideshow </th>
+                                        <th> Stock </th>
+                                        <th> Customer </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td> Add </td>
+                                        <!-- BEGIN ADMIN ADD -->
+                                        <?php 
+                                            if($admin_add=="Yes"){?>
+                                                <td>
+                                                    <input type="checkbox" name="admin_add" checked>
+                                                </td>
+                                        <?php 
+                                            }else{
+                                        ?>
+                                                <td>
+                                                    <input type="checkbox" name="admin_add">
+                                                </td>
+                                        <?php
+                                            }
+                                        ?>
+                                        <!-- END ADMIN ADD -->
+
+                                        <!-- BEGIN CATEGORY ADD -->
+                                        <?php 
+                                            if($category_add=="Yes"){?>
+                                                <td>
+                                                    <input type="checkbox" name="category_add" checked>
+                                                </td>
+                                        <?php 
+                                            }else{
+                                        ?>
+                                                <td>
+                                                    <input type="checkbox" name="category_add">
+                                                </td>
+                                        <?php
+                                            }
+                                        ?>
+                                        <!-- END CATEGORY ADD -->
+                                        
+                                        <!-- BEGIN PRODUCT ADD -->
+                                        <?php 
+                                            if($product_add=="Yes"){?>
+                                                <td>
+                                                    <input type="checkbox" name="product_add" checked>
+                                                </td>
+                                        <?php 
+                                            }else{
+                                        ?>
+                                                <td>
+                                                    <input type="checkbox" name="product_add">
+                                                </td>
+                                        <?php
+                                            }
+                                        ?>
+                                        <!-- END PRODUCT ADD -->
+
+                                        <!-- BEGIN SLIDESHOW ADD -->
+                                        <?php 
+                                            if($slideshow_add=="Yes"){?>
+                                                <td>
+                                                    <input type="checkbox" name="slideshow_add" checked>
+                                                </td>
+                                        <?php 
+                                            }else{
+                                        ?>
+                                                <td>
+                                                    <input type="checkbox" name="slideshow_add">
+                                                </td>
+                                        <?php
+                                            }
+                                        ?>
+                                        <!-- END SLIDESHOW ADD -->
+                                        
+                                        <!-- BEGIN STOCK ADD -->
+                                        <?php 
+                                            if($stock_add=="Yes"){?>
+                                                <td>
+                                                    <input type="checkbox" name="stock_add" checked>
+                                                </td>
+                                        <?php 
+                                            }else{
+                                        ?>
+                                                <td>
+                                                    <input type="checkbox" name="stock_add">
+                                                </td>
+                                        <?php
+                                            }
+                                        ?>
+                                        <!-- END STOCK ADD -->
+                                        
+                                        
+                                        <td> </td>
+                                    </tr>
+                                    <tr>
+                                        <td> Edit </td>
+
+                                        <!-- BEGIN ADMIN ADD -->
+                                        <?php 
+                                            if($admin_edit=="Yes"){?>
+                                                <td>
+                                                    <input type="checkbox" name="admin_edit" checked>
+                                                </td>
+                                        <?php 
+                                            }else{
+                                        ?>
+                                                <td>
+                                                    <input type="checkbox" name="admin_edit">
+                                                </td>
+                                        <?php
+                                            }
+                                        ?>
+                                        <!-- END ADMIN ADD -->
+
+                                        <!-- BEGIN CATEGORY ADD -->
+                                        <?php 
+                                            if($category_edit=="Yes"){?>
+                                                <td>
+                                                    <input type="checkbox" name="category_edit" checked>
+                                                </td>
+                                        <?php 
+                                            }else{
+                                        ?>
+                                                <td>
+                                                    <input type="checkbox" name="category_edit">
+                                                </td>
+                                        <?php
+                                            }
+                                        ?>
+                                        <!-- END CATEGORY ADD -->
+                                        
+                                        <!-- BEGIN PRODUCT ADD -->
+                                        <?php 
+                                            if($product_edit=="Yes"){?>
+                                                <td>
+                                                    <input type="checkbox" name="product_edit" checked>
+                                                </td>
+                                        <?php 
+                                            }else{
+                                        ?>
+                                                <td>
+                                                    <input type="checkbox" name="product_edit">
+                                                </td>
+                                        <?php
+                                            }
+                                        ?>
+                                        <!-- END PRODUCT ADD -->
+
+                                        <!-- BEGIN SLIDESHOW ADD -->
+                                        <?php 
+                                            if($slideshow_edit=="Yes"){?>
+                                                <td>
+                                                    <input type="checkbox" name="slideshow_edit" checked>
+                                                </td>
+                                        <?php 
+                                            }else{
+                                        ?>
+                                                <td>
+                                                    <input type="checkbox" name="slideshow_edit">
+                                                </td>
+                                        <?php
+                                            }
+                                        ?>
+                                        <!-- END SLIDESHOW ADD -->
+                                        
+                                        <td> </td>
+                                        <td> </td>
+                                    </tr>
+                                    <tr>
+                                        <td> Delete </td>
+
+                                        <!-- BEGIN ADMIN ADD -->
+                                        <?php 
+                                            if($admin_delete=="Yes"){?>
+                                                <td>
+                                                    <input type="checkbox" name="admin_delete" checked>
+                                                </td>
+                                        <?php 
+                                            }else{
+                                        ?>
+                                                <td>
+                                                    <input type="checkbox" name="admin_delete">
+                                                </td>
+                                        <?php
+                                            }
+                                        ?>
+                                        <!-- END ADMIN ADD -->
+
+                                        <!-- BEGIN CATEGORY ADD -->
+                                        <?php 
+                                            if($category_delete=="Yes"){?>
+                                                <td>
+                                                    <input type="checkbox" name="category_delete" checked>
+                                                </td>
+                                        <?php 
+                                            }else{
+                                        ?>
+                                                <td>
+                                                    <input type="checkbox" name="category_delete">
+                                                </td>
+                                        <?php
+                                            }
+                                        ?>
+                                        <!-- END CATEGORY ADD -->
+                                        
+                                        <!-- BEGIN PRODUCT ADD -->
+                                        <?php 
+                                            if($product_delete=="Yes"){?>
+                                                <td>
+                                                    <input type="checkbox" name="product_delete" checked>
+                                                </td>
+                                        <?php 
+                                            }else{
+                                        ?>
+                                                <td>
+                                                    <input type="checkbox" name="product_delete">
+                                                </td>
+                                        <?php
+                                            }
+                                        ?>
+                                        <!-- END PRODUCT ADD -->
+
+                                        <!-- BEGIN SLIDESHOW ADD -->
+                                        <?php 
+                                            if($slideshow_delete=="Yes"){?>
+                                                <td>
+                                                    <input type="checkbox" name="slideshow_delete" checked>
+                                                </td>
+                                        <?php 
+                                            }else{
+                                        ?>
+                                                <td>
+                                                    <input type="checkbox" name="slideshow_delete">
+                                                </td>
+                                        <?php
+                                            }
+                                        ?>
+                                        <!-- END SLIDESHOW ADD -->
+                                        
+                                        <td> </td>
+                                        <td> </td>
+                                    </tr>
+                                    <tr>
+                                        <td> View All </td>
+                                        
+                                        <!-- BEGIN ADMIN ADD -->
+                                        <?php 
+                                            if($admin_view_all=="Yes"){?>
+                                                <td>
+                                                    <input type="checkbox" name="admin_view_all" checked>
+                                                </td>
+                                        <?php 
+                                            }else{
+                                        ?>
+                                                <td>
+                                                    <input type="checkbox" name="admin_view_all">
+                                                </td>
+                                        <?php
+                                            }
+                                        ?>
+                                        <!-- END ADMIN ADD -->
+
+                                        <!-- BEGIN CATEGORY ADD -->
+                                        <?php 
+                                            if($category_view_all=="Yes"){?>
+                                                <td>
+                                                    <input type="checkbox" name="category_view_all" checked>
+                                                </td>
+                                        <?php 
+                                            }else{
+                                        ?>
+                                                <td>
+                                                    <input type="checkbox" name="category_view_all">
+                                                </td>
+                                        <?php
+                                            }
+                                        ?>
+                                        <!-- END CATEGORY ADD -->
+                                        
+                                        <!-- BEGIN PRODUCT ADD -->
+                                        <?php 
+                                            if($product_view_all=="Yes"){?>
+                                                <td>
+                                                    <input type="checkbox" name="product_view_all" checked>
+                                                </td>
+                                        <?php 
+                                            }else{
+                                        ?>
+                                                <td>
+                                                    <input type="checkbox" name="product_view_all">
+                                                </td>
+                                        <?php
+                                            }
+                                        ?>
+                                        <!-- END PRODUCT ADD -->
+
+                                        <!-- BEGIN SLIDESHOW ADD -->
+                                        <?php 
+                                            if($slideshow_view_all=="Yes"){?>
+                                                <td>
+                                                    <input type="checkbox" name="slideshow_view_all" checked>
+                                                </td>
+                                        <?php 
+                                            }else{
+                                        ?>
+                                                <td>
+                                                    <input type="checkbox" name="slideshow_view_all">
+                                                </td>
+                                        <?php
+                                            }
+                                        ?>
+                                        <!-- END SLIDESHOW ADD -->
+
+                                        <td> </td>
+
+                                        <!-- BEGIN CUSTOMER ADD -->
+                                        <?php 
+                                            if($customer_view_all=="Yes"){?>
+                                                <td>
+                                                    <input type="checkbox" name="customer_view_all" checked>
+                                                </td>
+                                        <?php 
+                                            }else{
+                                        ?>
+                                                <td>
+                                                    <input type="checkbox" name="customer_view_all">
+                                                </td>
+                                        <?php
+                                            }
+                                        ?>
+                                        <!-- END CUSTOMER ADD -->
+                                    </tr>
+                                    <tr>
+                                        <td> View Single </td>
+                                        
+                                        <!-- BEGIN ADMIN ADD -->
+                                        <?php 
+                                            if($admin_view_single=="Yes"){?>
+                                                <td>
+                                                    <input type="checkbox" name="admin_view_single" checked>
+                                                </td>
+                                        <?php 
+                                            }else{
+                                        ?>
+                                                <td>
+                                                    <input type="checkbox" name="admin_view_single">
+                                                </td>
+                                        <?php
+                                            }
+                                        ?>
+                                        <!-- END ADMIN ADD -->
+
+                                        <!-- BEGIN CATEGORY ADD -->
+                                        <?php 
+                                            if($category_view_single=="Yes"){?>
+                                                <td>
+                                                    <input type="checkbox" name="category_view_single" checked>
+                                                </td>
+                                        <?php 
+                                            }else{
+                                        ?>
+                                                <td>
+                                                    <input type="checkbox" name="category_view_single">
+                                                </td>
+                                        <?php
+                                            }
+                                        ?>
+                                        <!-- END CATEGORY ADD -->
+                                        
+                                        <!-- BEGIN PRODUCT ADD -->
+                                        <?php 
+                                            if($product_view_single=="Yes"){?>
+                                                <td>
+                                                    <input type="checkbox" name="product_view_single" checked>
+                                                </td>
+                                        <?php 
+                                            }else{
+                                        ?>
+                                                <td>
+                                                    <input type="checkbox" name="product_view_single">
+                                                </td>
+                                        <?php
+                                            }
+                                        ?>
+                                        <!-- END PRODUCT ADD -->
+
+                                        <!-- BEGIN SLIDESHOW ADD -->
+                                        <?php 
+                                            if($slideshow_view_single=="Yes"){?>
+                                                <td>
+                                                    <input type="checkbox" name="slideshow_view_single" checked>
+                                                </td>
+                                        <?php 
+                                            }else{
+                                        ?>
+                                                <td>
+                                                    <input type="checkbox" name="slideshow_view_single">
+                                                </td>
+                                        <?php
+                                            }
+                                        ?>
+                                        <!-- END SLIDESHOW ADD -->
+
+                                        <td> </td>
+
+                                        <!-- BEGIN CUSTOMER ADD -->
+                                        <?php 
+                                            if($customer_view_single=="Yes"){?>
+                                                <td>
+                                                    <input type="checkbox" name="customer_view_single" checked>
+                                                </td>
+                                        <?php 
+                                            }else{
+                                        ?>
+                                                <td>
+                                                    <input type="checkbox" name="customer_view_single">
+                                                </td>
+                                        <?php
+                                            }
+                                        ?>
+                                        <!-- END CUSTOMER ADD -->
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- END ADMINISTRATOR ACCESS LEVELS -->
+                            <div class="form-actions">
+                                <input type="submit" value="Edit Admin" name="submit" class="btn green uppercase" />
+                                <input type="reset"  value="Cancel" class="btn default uppercase">
+                            </div>
 
                             <!-- BEGIN INPUT CONTROL -->
-                            <div class="input-controls"> 
+                            <!-- <div class="input-controls"> 
                                 <div class="label-button">
 
                                 </div>                                
@@ -264,7 +736,7 @@
                                     <input type="submit" name="submit"  value="Edit" class="input-button">
                                 </div>                                            
                                 <div class="clear-float"></div>
-                            </div>
+                            </div> -->
                             <!-- END INPUT CONTROL -->
                         </div>
 
