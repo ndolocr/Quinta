@@ -307,6 +307,103 @@
                             </div>
                             <!-- END INPUT CONTROL -->
 
+                            <!-- BEGIN ADMINISTRATOR ACCESS LEVELS -->
+                            <table class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <td colspan="7" style="font-weight: bold; text-align: center;">
+                                            Administrator Access Levels
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th> # </th>
+                                        <th> Admin </th>
+                                        <th> Category </th>
+                                        <th> Product </th>
+                                        <th> Slideshow </th>
+                                        <th> Stock </th>
+                                        <th> Customer </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td> Add </td>
+                                        <td> 
+                                            <input type="checkbox" name="admin_add">
+                                        </td>
+                                        <td> 
+                                            <input type="checkbox" name="category_add">
+                                        </td>
+                                        <td> 
+                                            <input type="checkbox" name="product_add">
+                                        </td>
+                                        <td> 
+                                            <input type="checkbox" name="slideshow_add">
+                                        </td>
+                                        <td> 
+                                            <input type="checkbox" name="stock_add">
+                                        </td>
+                                        <td> </td>
+                                    </tr>
+                                    <tr>
+                                        <td> Edit </td>
+                                        <td> 
+                                            <input type="checkbox" name="admin_edit">
+                                        </td>
+                                        <td> 
+                                            <input type="checkbox" name="category_edit">
+                                        </td>
+                                        <td> 
+                                            <input type="checkbox" name="product_edit" >
+                                        </td>
+                                        <td> 
+                                            <input type="checkbox" name="slideshow_edit">
+                                        </td>
+                                        <td> </td>
+                                        <td> </td>
+                                    </tr>
+                                    <tr>
+                                        <td> View All </td>
+                                        <td> 
+                                            <input type="checkbox" name="admin_view_all">
+                                        </td>
+                                        <td> 
+                                            <input type="checkbox" name="category_view_all">
+                                        </td>
+                                        <td> 
+                                            <input type="checkbox" name="product_view_all" value="admin_add">
+                                        </td>
+                                        <td> 
+                                            <input type="checkbox" name="slideshow_view_all">
+                                        </td>
+                                        <td> </td>
+                                        <td> 
+                                            <input type="checkbox" name="customer_view_all">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> View Single </td>
+                                        <td> 
+                                            <input type="checkbox" name="admin_view_single">
+                                        </td>
+                                        <td> 
+                                            <input type="checkbox" name="category_view_single">
+                                        </td>
+                                        <td> 
+                                            <input type="checkbox" name="product_view_single">
+                                        </td>
+                                        <td> 
+                                            <input type="checkbox" name="slideshow_view_single">
+                                        </td>
+                                        <td> </td>
+                                        <td> 
+                                            <input type="checkbox" name="customer_view_single">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- END ADMINISTRATOR ACCESS LEVELS -->
+
                             <!-- BEGIN INPUT CONTROL -->
                             <div class="input-controls"> 
                                 <div class="label-button">
