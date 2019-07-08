@@ -97,6 +97,152 @@
             /*
              * Step 1:- Get User record and update information             
             */
+
+            //Getting values of Checkboxes 
+            //Add
+            if(isset($_POST['admin_add'])){
+                $admin_add = "Yes"; 
+            }else{
+                $admin_add = "No";
+            }
+
+            if(isset($_POST['category_add'])){
+                $category_add = "Yes"; 
+            }else{
+                $category_add = "No";
+            }
+
+            if(isset($_POST['product_add'])){
+                $product_add = "Yes"; 
+            }else{
+                $product_add = "No";
+            }
+
+            if(isset($_POST['slideshow_add'])){
+                $slideshow_add = "Yes"; 
+            }else{
+                $slideshow_add = "No";
+            }
+
+            if(isset($_POST['stock_add'])){
+                $stock_add = "Yes"; 
+            }else{
+                $stock_add = "No";
+            }            
+            
+
+            //Edit
+            if(isset($_POST['admin_edit'])){
+                $admin_edit = "Yes"; 
+            }else{
+                $admin_edit = "No";
+            }
+
+            if(isset($_POST['category_edit'])){
+                $category_edit = "Yes"; 
+            }else{
+                $category_edit = "No";
+            }
+
+            if(isset($_POST['product_edit'])){
+                $product_edit = "Yes"; 
+            }else{
+                $product_edit = "No";
+            }
+
+            if(isset($_POST['slideshow_edit'])){
+                $slideshow_edit = "Yes"; 
+            }else{
+                $slideshow_edit = "No";
+            }
+
+            //View All
+            if(isset($_POST['admin_view_all'])){
+                $admin_view_all = "Yes"; 
+            }else{
+                $admin_view_all = "No";
+            }
+
+            if(isset($_POST['category_view_all'])){
+                $category_view_all = "Yes"; 
+            }else{
+                $category_view_all = "No";
+            }
+
+            if(isset($_POST['product_view_all'])){
+                $product_view_all = "Yes"; 
+            }else{
+                $product_view_all = "No";
+            }
+
+            if(isset($_POST['slideshow_view_all'])){
+                $slideshow_view_all = "Yes"; 
+            }else{
+                $slideshow_view_all = "No";
+            }
+
+            if(isset($_POST['customer_view_all'])){
+                $customer_view_all = "Yes"; 
+            }else{
+                $customer_view_all = "No";
+            }
+
+            //View All
+            if(isset($_POST['admin_view_single'])){
+                $admin_view_single = "Yes"; 
+            }else{
+                $admin_view_single = "No";
+            }
+
+            if(isset($_POST['category_view_single'])){
+                $category_view_single = "Yes"; 
+            }else{
+                $category_view_single = "No";
+            }
+
+            if(isset($_POST['product_view_single'])){
+                $product_view_single = "Yes"; 
+            }else{
+                $product_view_single = "No";
+            }
+
+            if(isset($_POST['slideshow_view_single'])){
+                $slideshow_view_single = "Yes"; 
+            }else{
+                $slideshow_view_single = "No";
+            }
+
+            if(isset($_POST['customer_view_single'])){
+                $customer_view_single = "Yes"; 
+            }else{
+                $customer_view_single = "No";
+            }
+
+        
+            //Deelete
+            if(isset($_POST['admin_delete'])){
+                $admin_delete = "Yes"; 
+            }else{
+                $admin_delete = "No";
+            }
+
+            if(isset($_POST['category_delete'])){
+                $category_delete = "Yes"; 
+            }else{
+                $category_delete = "No";
+            }
+
+            if(isset($_POST['product_delete'])){
+                $product_delete = "Yes"; 
+            }else{
+                $product_delete = "No";
+            }
+
+            if(isset($_POST['slideshow_delete'])){
+                $slideshow_delete = "Yes"; 
+            }else{
+                $slideshow_delete = "No";
+            }
             
             $query = "UPDATE user SET "
                     . "firstName='$first_name', "
@@ -106,7 +252,30 @@
                     . "city='$city', "
                     . "country='$country', "
                     . "telephone='$telephone', "
-                    . "emailAddress='$email_address' "
+                    . "emailAddress='$email_address', "
+                    . "admin_add='$admin_add', "
+                    . "admin_edit='$admin_edit', "
+                    . "admin_delete='$admin_delete', "
+                    . "admin_view_all='$admin_view_all', "
+                    . "admin_view_single='$admin_view_single', "
+                    . "category_add='$category_add', "
+                    . "category_edit='$category_edit', "
+                    . "category_delete='$category_delete', "
+                    . "category_view_all='$category_view_all', "
+                    . "category_view_single='$category_view_single', "
+                    . "product_add='$product_add', "
+                    . "product_edit='$product_edit', "
+                    . "product_delete='$product_delete', "
+                    . "product_view_all='$product_view_all', "
+                    . "product_view_single='$product_view_single', "
+                    . "slideshow_add='$slideshow_add', "
+                    . "slideshow_edit='$slideshow_edit', "
+                    . "slideshow_delete='$slideshow_delete', "
+                    . "slideshow_view_all='$slideshow_view_all', "
+                    . "slideshow_view_single='$slideshow_view_single', "
+                    . "stock_add='$stock_add', "
+                    . "customer_view_all='$customer_view_all', "
+                    . "customer_view_single='$customer_view_single' "
                     . "WHERE userId='$userId'";
             $result = mysqli_query($connect, $query) or die("Error Saving user record!");
             

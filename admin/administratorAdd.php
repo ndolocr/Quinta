@@ -66,7 +66,7 @@
             //Setting final value of password
             $password = $crypt_password;
 
-            //Getting values of Admin Checkboxes 
+            //Getting values of Checkboxes 
             //Add
             if(isset($_POST['admin_add'])){
                 $admin_add = "Yes"; 
