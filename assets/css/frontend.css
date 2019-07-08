@@ -269,7 +269,7 @@ image{
 }
 
 li a .noofitems {
-    border:solid 1px #999999;
+    /*border:solid 1px #999999;*/
     float:right;
     font-size: 10px;
     padding: 0px 2px 0px 2px;
@@ -280,7 +280,153 @@ li a .noofitems {
     border-radius: 50px;
 }
 
-.prod_image img{
-    width: 40px;
+
+.product-info{
+    background: #eeeeee;
+    margin: 0 auto;
 }
 
+.cart-details{
+    background: #FFFFFF;
+    border-bottom: solid 5px #eeeeee;
+}
+
+.prod_image{
+    float: left;
+    margin-left: 10px;
+    width: 20%;
+
+}
+
+.prod_image img{
+    width: 40px;
+    padding: 2px;
+}
+
+.prod_details{
+    float: left;
+    font-weight: bold;
+    padding: 3px;
+}
+
+.category_name{
+    color:#999;
+    font-weight: normal;
+}
+
+.category_name a{
+    color:#999;
+    font-weight: normal;
+}
+
+.product_prices{   
+    font-size: 15px;
+    padding: 1px;
+}
+
+.cart{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cart-headers{
+    color: #999999
+    font-size: 14px;
+    font-weight: bold; 
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-transform: uppercase; 
+}
+
+.crossed{
+    color: #999;
+    font-size: 13px;
+    text-decoration: line-through;
+}
+
+.saved{
+    color: #7ed321;
+    font-size: 12px;
+}
+
+.cart-product-details{
+    border-top: solid 15px #eeeeee;
+    padding: 5px;
+}
+
+.left-border{
+    border-left: solid 1px #eeeeee;
+}
+
+.side-bars{
+    border-right: solid 1px #eeeeee;
+}
+
+.input-xsmall{    
+    border: none;
+    border-bottom: solid 1px #eeeeee;
+}
+
+.greycol{
+
+}
+
+.address-header{
+    border-bottom: solid 1px #eeeeee;
+    font-weight: bold;
+    margin-right: 2%;
+    padding: 2%;
+    width: 100%;
+}
+
+.address-header i{
+    color: #7ed321;    
+    padding-right: 25px;
+}
+
+.other-information{
+    font-weight: normal;
+}
+
+.mobile-money img{
+    width: 50px;
+}
+
+.prod_image_money img{
+    width: 200px;
+}
+
+.input-button{
+    background: #7ed321;
+    background: #28a745;
+    color: #FFFFFF;
+    font-weight: bold;
+    width: 40%;
+
+}
+
+.input-controls{
+    padding: 2%;
+}
+
+.input-text{
+    width: 40%;
+}
+
+#inner{
+    display:inline-block;
+    border:1px solid gray;
+    font-weight: bold;
+    width:100%;
+    padding:10px;
+    text-align: center;
+    margin:30px auto;
+    
+    border-radius:7px;
+    -moz-border-radius:7px;
+    -webkit-border-radius:7px;
+    
+    box-shadow:5px 5px 15px #A0A0A0;
+    -moz-box-shadow:5px 5px 15px #A0A0A0;
+    -webkit-box-shadow:5px 5px 15px #A0A0A0;
+}

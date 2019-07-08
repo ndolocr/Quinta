@@ -59,6 +59,7 @@
                 $_SESSION['email']                  = $email;  
                 $_SESSION['address']                = $address;              
                 $_SESSION['country']                = $country;
+                $_SESSION['telephone']              = $telephone;
                 $_SESSION['lastname']               = $last_name;
                 $_SESSION['firstname']              = $first_name;
                 $_SESSION['middlename']             = $middle_name;

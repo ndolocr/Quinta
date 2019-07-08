@@ -3,6 +3,7 @@
     $order = "active";
     
     $stock = "";
+    $profile = "";
     $product = "";
     $category = "";
     $customer = "";

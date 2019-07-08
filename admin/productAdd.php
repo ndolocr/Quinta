@@ -26,6 +26,7 @@
         $product_name = $_POST['productName']; 
         $buying_price = $_POST['buyingPrice'];
         $selling_price = $_POST['sellingPrice'];
+        $originalImage = "default.PNG";
         
         
         if($discount==""){

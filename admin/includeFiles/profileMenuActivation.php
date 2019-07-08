@@ -1,13 +1,13 @@
 <?php
     //To show active menu
-    $administrator = "active";
+	$profile = "active";
         
     $order = "";
     $stock = "";
-    $profile = "";
     $product = "";
     $category = "";
     $customer = ""; 
     $slideShow = "";
     $dashoboard = "";
+    $administrator = "";
 ?>

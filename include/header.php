@@ -105,7 +105,13 @@
                 <div class="col-sm-12 col-md-3">
                     <?php
                         if(isset($_SESSION['login'])){
-                    ?>
+                    
+                            //Get number of records in cart
+                            $userId = $_SESSION['id'];
+                            $numQuery = "SELECT * FROM cart WHERE customerId = '$userId'";
+                            $numResults = mysqli_query($connect, $numQuery);
+                            $num_num_rows = mysqli_num_rows($numResults);
+                        ?>
                         <ul class="nav navbar-nav" style="text-align: right;">
                             <li style="color:#999999; font-weight: bold; padding-top: 12px;">
                                 Welcome: <?php echo $_SESSION['firstname'] ?>                                
@@ -116,8 +122,8 @@
                             </li>
 
                             <li style="font-weight: bold;" >  
-                                <a href="#" style="color:#999999;"> <i class="fa fa-shopping-cart fa-1x"></i>  
-                                    <div class="noofitems"> 1 </div>
+                                <a href="cart.php" style="color:#999999;"> <i class="fa fa-shopping-cart fa-1x"></i>  
+                                    <div class="noofitems">  <?php echo $num_num_rows; ?> </div>
                                 </a>
                             </li>
                         </ul>

@@ -43,6 +43,10 @@
                     $email = $row['emailAddress'];
                     $last_name = $row['lastName'];
                     $first_name = $row['firstName'];
+                    $city = $row['city'];
+                    $address = $row['address'];
+                    $country = $row['country'];
+                    $telephone = $row['telephone'];
                 }
                 
                 $admin_query = "SELECT * FROM admin WHERE userId = '$userId'";
@@ -57,13 +61,18 @@
                     }
                     
                      //Setting Session Variables
-                    $_SESSION['login'] = true;
-                    $_SESSION['userId'] = $userId;                        
-                    $_SESSION['adminId'] = $adminId;
-                    $_SESSION['email'] = $email_address;
-                    $_SESSION['last_name'] = $last_name;
-                    $_SESSION['first_name'] = $first_name;
-                        
+                    $_SESSION['login']          = true;
+                    $_SESSION['id']             = $userId;                        
+                    $_SESSION['adminId']        = $adminId;
+                    $_SESSION['city']           = $city;
+                    $_SESSION['address']        = $address;              
+                    $_SESSION['country']        = $country;
+                    $_SESSION['telephone']      = $telephone;
+                    $_SESSION['email']          = $email;
+                    $_SESSION['lastname']       = $last_name;
+                    $_SESSION['firstname']      = $first_name;
+                    $_SESSION['middlename']     = $middle_name;
+      
                     header('Location: home.php');
                 }
             }

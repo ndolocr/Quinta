@@ -3,8 +3,11 @@
     include("includeFiles/header.php");
     include("includeFiles/menu.php");
     
-    include("includeFiles/administratorMenuActivation.php");
-        
+    include("includeFiles/profileMenuActivation.php");
+    
+    if(isset($GET['id'])){
+
+    }
     
     //Error messages
     $city_error_message = "";
@@ -35,7 +38,7 @@
         
         //Validations
         if($first_name==""){
-            $first_name_error_message = "* First Name required!";            
+            $first_name_error_message = "* First Name required!";
         }elseif($last_name==""){
             $last_name_error_message = "* Last Name required!";
         }elseif($email_address==""){
@@ -137,14 +140,14 @@
     <div class="col-md-10 right-column">
 
         <!-- BEGIN BREAD CRUMBS ROW -->
-        <div class="row">                        
+        <div class="row">
             <div class="col-sm-12 col-lg-12 col-xl-12 col-md-12 tree">
                 <ul> 
                     <li> <a href="home.php"> Home  </a> </li> 
-                    <li> <a href="administratorViewAll.php"> Administrator  </a> </li>
-                    <li>  Add </li>
+                    <li> My Profile </li>
+                    <li>  View </li>
                 </ul>   
-            </div>                        
+            </div>
         </div>
         <!-- END BREAD CRUMBS ROW -->
 
@@ -167,7 +170,7 @@
                                     First Name
                                 </div>                                            
                                 <div class="control"> 
-                                    <input type="text" name="firstName"  placeholder="First Name" class="input-text">
+                                    <input type="text" name="firstName"  value="<?php echo $_SESSION['firstname'] ?>" placeholder="First Name" class="input-text">
                                 </div>
                                 <div class="first-name-error-message">
                                     <?php echo $first_name_error_message; ?>
@@ -181,7 +184,7 @@
                                     Middle Name
                                 </div>                                            
                                 <div class="control"> 
-                                    <input type="text" name="middleName"  placeholder="Middle Name" class="input-text">
+                                    <input type="text" name="middleName" value="<?php echo $_SESSION['middlename'] ?>"  placeholder="Middle Name" class="input-text">
                                 </div>
                                 <div class="middle-name-error-message">
                                     <?php echo $middle_name_error_message; ?>
@@ -196,7 +199,7 @@
                                     Last Name
                                 </div>                                            
                                 <div class="control"> 
-                                    <input type="text" name="lastName"  placeholder="Last Name" class="input-text">
+                                    <input type="text" name="lastName" value="<?php echo $_SESSION['lastname'] ?>" placeholder="Last Name" class="input-text">
                                 </div>                                            
                                 <div class="last-name-error-message">
                                     <?php echo $last_name_error_message; ?>
@@ -211,7 +214,7 @@
                                     Email Address
                                 </div>                                            
                                 <div class="control"> 
-                                    <input type="text" name="email"  placeholder="Email Address" class="input-text">
+                                    <input type="text" name="email" value="<?php echo $_SESSION['email'] ?>"  placeholder="Email Address" class="input-text">
                                 </div>
                                 <div class="email-address-error-message">
                                     <?php echo $email_address_error_message; ?>
@@ -226,7 +229,7 @@
                                     Address
                                 </div>                                            
                                 <div class="control"> 
-                                    <input type="text" name="address"  placeholder="Address" class="input-text">
+                                    <input type="text" name="address" value="<?php echo $_SESSION['address'] ?>" placeholder="Address" class="input-text">
                                 </div>
                                 <div class="address-error-message">
                                     <?php echo $address_error_message; ?>
@@ -241,7 +244,7 @@
                                     Country
                                 </div>                                            
                                 <div class="control"> 
-                                    <input type="text" name="country"  placeholder="Country" class="input-text">
+                                    <input type="text" name="country" value="<?php echo $_SESSION['country'] ?>" placeholder="Country" class="input-text">
                                 </div>
                                 <div class="country-error-message">
                                     <?php echo $country_error_message; ?>
@@ -256,53 +259,25 @@
                                     City
                                 </div>                                            
                                 <div class="control"> 
-                                    <input type="text" name="city"  placeholder="City" class="input-text">
+                                    <input type="text" name="city" value="<?php echo $_SESSION['city'] ?>" placeholder="City" class="input-text">
                                 </div>
                                 <div class="city-error-message">
                                     <?php echo $city_error_message; ?>
                                 </div>
                                 <div class="clear-float"></div>
                             </div>
-                            <!-- END INPUT CONTROL -->                                                                                                           
-
+                            <!-- END INPUT CONTROL -->                                                          
                             <!-- BEGIN INPUT CONTROL -->
                             <div class="input-controls"> 
                                 <div class="label">
                                     Telephone
                                 </div>                                            
                                 <div class="control"> 
-                                    <input type="text" name="telephone"  placeholder="Telephone" class="input-text">
+                                    <input type="text" name="telephone" value="<?php echo $_SESSION['telephone'] ?>" placeholder="Telephone" class="input-text">
                                 </div>
                                 <div class="telephone-error-message">
                                     <?php echo $telephone_error_message; ?>
                                 </div>
-                                <div class="clear-float"></div>
-                            </div>
-                            <!-- END INPUT CONTROL -->
-
-                            <!-- BEGIN INPUT CONTROL -->
-                            <div class="input-controls"> 
-                                <div class="label">
-                                    Password
-                                </div>                                            
-                                <div class="control"> 
-                                    <input type="password" name="password"  placeholder="Password" class="input-text">
-                                </div>
-                                <div class="password-error-message">
-                                    <?php echo $password_error_message; ?>
-                                </div>
-                                <div class="clear-float"></div>
-                            </div>
-                            <!-- END INPUT CONTROL -->
-
-                            <!-- BEGIN INPUT CONTROL -->
-                            <div class="input-controls"> 
-                                <div class="label">
-                                    Confirm Password
-                                </div>                                            
-                                <div class="control"> 
-                                    <input type="password" name="confirmPassword"  placeholder="Confirm Password" class="input-text">
-                                </div>                                            
                                 <div class="clear-float"></div>
                             </div>
                             <!-- END INPUT CONTROL -->

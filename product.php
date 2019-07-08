@@ -12,6 +12,8 @@
             //Get Post information
             $productId = $_POST['product_id'];
             $customerId = $_SESSION['id'];
+            $unit_price = $_POST['unit_price'];
+
             
             //Determine new records Id
             $cart_search_query = "SELECT * FROM cart ORDER BY cartId DESC LIMIT 1";
@@ -29,11 +31,12 @@
 
             }
 
-            //Insert record in cart table            
+            //Insert record in cart table
+            $current_date = date("Y-m-d");            
             $cart_query = "INSERT INTO cart "
-            ."(cartId, customerId, productId) "
+            ."(cartId, customerId, productId, unitPrice, transactionDate) "
             ."VALUES "
-            ."('$cartId', '$customerId', '$productId')";
+            ."('$cartId', '$customerId', '$productId', '$unit_price', '$current_date')";
 
             $cart_result = mysqli_query($connect, $cart_query) or die("Error Saving Cart Record!");
 
@@ -134,7 +137,7 @@
                                     if($product_discount){
                                 ?>
                                     <div class="discount"> 
-                                        <?php echo "Ksh. ", $product_discount; ?> 
+                                        <?php echo "Ksh. ", $product_discount+$product_sellingPrice; ?> 
                                     </div>
                                 <?php
                                     }
@@ -143,7 +146,8 @@
                                     <form method="POST" action="product.php">
                                         <input type="submit" name="submit" value="BUY NOW" class="btn yellow sbold uppercase">
 
-                                        <input type="text" name="product_id" value="<?php echo $product_id ?>">
+                                        <input type="text" hidden="true" name="unit_price" value="<?php echo $product_sellingPrice ?>">
+                                        <input type="text" hidden="true" name="product_id" value="<?php echo $product_id ?>">
                                     </form>
                                 </div>
 

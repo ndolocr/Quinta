@@ -137,6 +137,19 @@
         </div>
     </div>
     <!-- END ORDER MENU ROW -->
+
+    <!-- BEGIN ORDER MENU ROW -->
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xl-12 menubox">
+            <div class="menu-title  <?php echo $profile; ?> "> My Profile </div>
+            <ul>                
+                <li>
+                    <a href="profileView.php?id=<?php echo $_SESSION['id'] ?>"> View Profile </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- END ORDER MENU ROW -->
     
     
 </div>

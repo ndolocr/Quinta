@@ -4,6 +4,7 @@
     
     $order = "";
     $stock = "";
+    $profile = "";
     $category = "";
     $customer = "";
     $slideShow = "";
