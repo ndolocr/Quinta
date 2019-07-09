@@ -47,6 +47,36 @@
                     $address = $row['address'];
                     $country = $row['country'];
                     $telephone = $row['telephone'];
+
+                    //Access levels
+                    $admin_add = $row['admin_add']; 
+                    $admin_edit = $row['admin_edit'];
+                    $admin_delete = $row['admin_delete'];
+                    $admin_view_all = $row['admin_view_all'];
+                    $admin_view_single = $row['admin_view_single'];
+
+                    $category_add = $row['category_add'];
+                    $category_edit = $row['category_edit'];
+                    $category_delete = $row['category_delete'];
+                    $category_view_all = $row['category_view_all'];
+                    $category_view_single = $row['category_view_single'];
+
+                    $product_add = $row['product_add'];
+                    $product_edit = $row['product_edit'];
+                    $product_delete = $row['product_delete'];
+                    $product_view_all = $row['product_view_all'];
+                    $product_view_single = $row['product_view_single'];
+
+                    $slideshow_add = $row['slideshow_add'];
+                    $slideshow_edit = $row['slideshow_edit'];
+                    $slideshow_delete = $row['slideshow_delete'];
+                    $slideshow_view_all = $row['slideshow_view_all'];
+                    $slideshow_view_single = $row['slideshow_view_single'];
+
+                    $stock_add = $row['stock_add'];
+
+                    $customer_view_all = $row['customer_view_all'];
+                    $customer_view_single = $row['customer_view_single'];
                 }
                 
                 $admin_query = "SELECT * FROM admin WHERE userId = '$userId'";
@@ -72,7 +102,37 @@
                     $_SESSION['lastname']       = $last_name;
                     $_SESSION['firstname']      = $first_name;
                     $_SESSION['middlename']     = $middle_name;
-      
+                    
+                    //Access levels
+                    $_SESSION['admin_add']               = $admin_add; 
+                    $_SESSION['admin_edit']              = $admin_edit;
+                    $_SESSION['admin_delete']            = $admin_delete;
+                    $_SESSION['admin_view_all']          = $admin_view_all;
+                    $_SESSION['admin_view_single']       = $admin_view_single;
+
+                    $_SESSION['category_add']            = $category_add;
+                    $_SESSION['category_edit']           = $category_edit;
+                    $_SESSION['category_delete']         = $category_delete;
+                    $_SESSION['category_view_all']       = $category_view_all;
+                    $_SESSION['category_view_single']    = $category_view_single;
+
+                    $_SESSION['product_add']             = $product_add;
+                    $_SESSION['product_edit']            = $product_edit;
+                    $_SESSION['product_delete']          = $product_delete;
+                    $_SESSION['product_view_all']        = $product_view_all;
+                    $_SESSION['product_view_single']     = $product_view_single;
+
+                    $_SESSION['slideshow_add']           = $slideshow_add;
+                    $_SESSION['slideshow_edit']          = $slideshow_edit;
+                    $_SESSION['slideshow_delete']        = $slideshow_delete;
+                    $_SESSION['slideshow_view_all']      = $slideshow_view_all;
+                    $_SESSION['slideshow_view_single']   = $slideshow_view_single;
+
+                    $_SESSION['stock_add']               = $stock_add;
+
+                    $_SESSION['customer_view_all']       = $customer_view_all;
+                    $_SESSION['customer_view_single']    = $customer_view_single;
+
                     header('Location: home.php');
                 }
             }
