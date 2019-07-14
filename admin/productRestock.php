@@ -21,12 +21,14 @@
             $productName = $row['productName'];
             $stockAvailable = $row['stockAvailable'];
             $productDescription = $row['productDescription'];
-            $originalSellingPrice = $row['originalSellingPrice'];
-            $discountedSellingPrice = $row['discountedSellingPrice'];
+            $originalSellingPrice = $row['sellingPrice'];
+            $discountedSellingPrice = $row['discount'];
             
             if(!$stockAvailable){
                 $stockAvailable = 0;
             }
+
+           
         }
     }
     
@@ -140,11 +142,11 @@
                             
                             <tr>
                                 <td>Selling Price</td>
-                                <td style="text-decoration: line-through;" >Ksh. <?php echo $originalSellingPrice; ?></td>
+                                <td> Ksh. <?php echo $originalSellingPrice; ?></td>
                             </tr>
                             
                             <tr>
-                                <td>Discounted Selling Price</td>
+                                <td>Discounted</td>
                                 <td>Ksh. <?php echo $discountedSellingPrice; ?></td>
                             </tr>
                             
