@@ -12,9 +12,9 @@
         $result = mysqli_query($connect, $query) or die("Unable to get record");    
         
         while($row = mysqli_fetch_assoc($result)){
-           
-            $categoryName = $row['categoryName'];
-            $description = $row['description'];
+            $image          = $row['image'];
+            $description    = $row['description'];
+            $categoryName   = $row['categoryName'];            
         }
     }
     
@@ -26,16 +26,53 @@
         //Capture POST Values
         $categoryId = $_POST['categoryId'];
         $description = $_POST['description'];
-        $categoryName = $_POST['categoryName'];       
+        $categoryName = $_POST['categoryName']; 
+        $originalImage = $_POST['originalImage'];      
        
         //Validations
         if($categoryName==""){
             $category_name_error_message = "* Category Name required!";
-        }else{                        
+        }else{
+
+            //processing member image
+            //File Properties
+            
+            $file           = $_FILES['image'];
+            $file_name      = $file['name'];
+            $file_temp      = $file['tmp_name'];
+            $file_size      = $file['size'];
+            $file_error     = $file['error'];
+
+            //Get file extension
+            $file_ext = explode('.', $file_name);
+            $file_ext = strtolower(end($file_ext));
+
+            //allowed extensions
+            $allowed = array('png', 'PNG', 'jpg', 'JPG', 'jpeg', 'JPEG');
+
+            //check if the file uploaded has the required extension
+            if(in_array($file_ext, $allowed)){
+                if($file_error == 0){
+                    //rename file to make it unique
+                    $file_name_new = time().".".$file_ext;
+                    $file_destination = "images/uploads/categories/".$file_name_new;
+
+                    if(move_uploaded_file($file_temp, $file_destination)){
+                        $image = $file_name_new;
+                    }else{
+                        $image = $originalImage;
+                    }
+                }else{
+                    $image = $originalImage;
+                }
+            }else{
+                $image = $originalImage;
+            }                    
         
              $query = "UPDATE category SET "
                     . "categoryName='$categoryName', "
-                    . "description='$description' "                    
+                    . "description='$description', "
+                    . "image='$image' "                    
                     . "WHERE categoryId='$categoryId'";
             $result = mysqli_query($connect, $query) or die("Error Saving Cat record!");
             
@@ -83,6 +120,24 @@
 
                         <div class="col-md-10 middle-box">                                         
                             
+                            <!-- BEGIN INPUT CONTROL -->
+                            <div class="input-controls"> 
+                                                                           
+                                <div class="control"> 
+                                    <div class="edit-image">
+                                        <div class="image">
+                                            <img src="images/uploads/categories/<?php echo $image; ?>" alt=""> 
+                                        </div>
+                                    </div>
+                                    <input type="text" value="<?php echo $image; ?>" name="originalImage" hidden="true">
+                                    <input type="text" value="<?php echo $id; ?>" name="productId" hidden="true">
+                                    <input type="file" name="image" class="input-text" style="float: left;">
+                                </div>
+                                
+                                <div class="clear-float"></div>
+                            </div>
+                            <!-- END INPUT CONTROL -->
+
                             <!-- BEGIN INPUT CONTROL -->
                             <div class="input-controls"> 
                                 <div class="label">

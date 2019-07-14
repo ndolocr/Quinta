@@ -73,9 +73,13 @@
                                         echo $row['publish'];
                                     echo "</td>";
                                     
-                                    echo"<td> <a href='slideShowEdit.php?id=".urlencode($id)."' class='btn yellow btn-outline sbold uppercase'> Edit </a> </td>";
+                                    if($_SESSION['slideshow_edit']=="Yes"){
+                                        echo"<td> <a href='slideShowEdit.php?id=".urlencode($id)."' class='btn yellow btn-outline sbold uppercase'> Edit </a> </td>";
+                                    }
 
-                                    echo"<td> <a href='slideShowDelete.php?id=".urlencode($id)."' class='btn red btn-outline sbold uppercase'> Delete </a> </td>";
+                                    if($_SESSION['slideshow_delete']=="Yes"){
+                                        echo"<td> <a href='slideShowDelete.php?id=".urlencode($id)."' class='btn red btn-outline sbold uppercase'> Delete </a> </td>";
+                                    }
 
                                 echo "</tr>";
 

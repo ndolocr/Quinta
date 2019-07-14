@@ -17,12 +17,47 @@
         //Capture POST Values
                
         $description = $_POST['description'];
-        $categoryName = $_POST['categoryName'];       
+        $categoryName = $_POST['categoryName'];
+        $originalImage = "default.PNG";       
        
         //Validations
         if($categoryName==""){
             $category_name_error_message = "* Product Name required!";        
         }else{
+
+            //File Properties
+            
+            $file           = $_FILES['image'];
+            $file_name      = $file['name'];
+            $file_temp      = $file['tmp_name'];
+            $file_size      = $file['size'];
+            $file_error     = $file['error'];
+
+            //Get file extension
+            $file_ext = explode('.', $file_name);
+            $file_ext = strtolower(end($file_ext));
+
+            //allowed extensions
+            $allowed = array('png', 'PNG', 'jpg', 'JPG', 'jpeg', 'JPEG');
+
+            //check if the file uploaded has the required extension
+            if(in_array($file_ext, $allowed)){
+                if($file_error == 0){
+                    //rename file to make it unique
+                    $file_name_new = time().".".$file_ext;
+                    $file_destination = "images/uploads/categories/".$file_name_new;
+
+                    if(move_uploaded_file($file_temp, $file_destination)){
+                        $image = $file_name_new;
+                    }else{
+                        $image = $originalImage;
+                    }
+                }else{
+                    $image = $originalImage;
+                }
+            }else{
+                $image = $originalImage;
+            }
                    
             $query = "SELECT * FROM category ORDER BY categoryId DESC LIMIT 1";
             $result = mysqli_query($connect, $query) or die("Error getting category record");
@@ -41,9 +76,9 @@
             
              //Insert User values in database
              $insert_query = "INSERT INTO category "
-                    ."(categoryId, categoryName, description )"
+                    ."(categoryId, categoryName, description, image )"
                     ."VALUES"
-                    ."('$categoryId', '$categoryName', '$description')";
+                    ."('$categoryId', '$categoryName', '$description', '$image')";
             $insert_results = mysqli_query($connect, $insert_query) or die("Error saving category reocord!");
                    
             header("Location:categoryViewAll.php");
@@ -87,7 +122,22 @@
                         <div class="col-md-1"> </div>
                         <!-- END LEFT BOX -->
 
-                        <div class="col-md-10 middle-box">                                                                                                 
+                        <div class="col-md-10 middle-box">                                                        
+                            <div class="input-controls">
+                                (Image Size 700px by 700px)
+                            </div>
+                            
+                            <!-- BEGIN INPUT CONTROL -->
+                            <div class="input-controls"> 
+                                <div class="label">
+                                    Category Image
+                                </div>                                            
+                                <div class="control"> 
+                                    <input type="file" name="image" class="input-text">
+                                </div>
+                                <div class="clear-float"></div>
+                            </div>
+                            <!-- END INPUT CONTROL -->                                        
                             
                             <!-- BEGIN INPUT CONTROL -->
                             <div class="input-controls"> 

@@ -73,9 +73,13 @@
                                         echo $row['description'];
                                     echo "</td>";
 
-                                    echo"<td> <a href='categoryEdit.php?id=".urlencode($id)."' class='btn yellow btn-outline sbold uppercase'> Edit </a> </td>";
+                                    if($_SESSION['category_edit']=="Yes"){
+                                        echo"<td> <a href='categoryEdit.php?id=".urlencode($id)."' class='btn yellow btn-outline sbold uppercase'> Edit </a> </td>";
+                                    }
 
-                                    echo"<td> <a href='categoryDelete.php?id=".urlencode($id)."' class='btn red btn-outline sbold uppercase'> Delete </a> </td>";
+                                    if($_SESSION['category_delete']=="Yes"){
+                                        echo"<td> <a href='categoryDelete.php?id=".urlencode($id)."' class='btn red btn-outline sbold uppercase'> Delete </a> </td>";
+                                    }
 
                                 echo "</tr>";
 

@@ -36,11 +36,11 @@
     while($category_row = mysqli_fetch_assoc($category_result)){
         $categoryId = $category_row['categoryId'];
         
-        $product_query = "SELECT * FROM product WHERE categoryId = '$categoryId' ORDER BY productName ASC LIMIT 4";
+        /*$product_query = "SELECT * FROM product WHERE categoryId = '$categoryId' ORDER BY productName ASC LIMIT 4";
         $product_result = mysqli_query($connect, $product_query);
         $product_num_rows = mysqli_num_rows($product_result);
         
-        if($product_num_rows){
+        if($product_num_rows){*/
             ?>
 
             <!-- BEGIN ROW -->
@@ -62,74 +62,36 @@
             <!-- BEGIN ROW -->
             <div class="row"> 
             
-            <?php
-            while($product_row = mysqli_fetch_assoc($product_result)){
+            <?php            
                 ?>
                 
                 <!-- BEGIN CATEGORY ITEMS -->
                 <div class="col-md-3">
                     <div class="product-item">
-                        <a href="product.php?id=<?php echo $product_row['productId']; ?>">
+                        <a href="category.php?id=<?php echo $category_row['categoryId']; ?>">
                             <div class="product-image">
-                                <img src="admin/images/uploads/products/<?php echo $product_row['image']; ?>" />
+                                <img src="admin/images/uploads/categories/<?php echo $category_row['image']; ?>" />
                             </div>
-                        </a>
-                        
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="product-name">
-                                    <a href="product.php?id=<?php echo $product_row['productId']; ?>"> <?php echo $product_row['productName'] ; ?> </a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="product-cost">
-                                    <?php
-                                        $sellingPrice = $product_row['sellingPrice'];
-                                        if($sellingPrice){
-                                            echo "Now Ksh. ".$sellingPrice;
-                                        }                                                                                                    
-                                    ?>
-                                </div>
-                            </div>
-                            
-                            <div class="col-sm-6">
-                                <div class="product-crossed">
-                                    <?php
-                                         $discount = $product_row['discount'];
-                                        if($discount>0){
-                                            $newPrice = $sellingPrice + $discount;
-                                            echo "Was Ksh. ".$newPrice;
-                                        }                                                   
-                                    ?>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-sm-12">
-                                
-                                    <a href="add_product_to_cart.php?productId=<?php echo $product_row['productId']; ?>" style="width: 100%;" class="btn grey btn-outline sbold uppercase">
-                                        Add To Cart
-                                    </a>
-                               
-                            </div>
-                        </div>
-
+                        </a>                                                                   
                     </div>
                 </div>
                 <!-- END CATEGORY ITEMS -->
-                
+                <div class="row">
+                    <div class="col-md-8">
+                        <?php echo $category_row['description'] ; ?>
+                        <!--<div class="product-name">
+                            <a href="product.php?id=<?php echo $product_row['productId']; ?>"> <?php echo $product_row['productName'] ; ?> </a>
+                        </div> -->
+                    </div>
+                </div>
                 <?php
-            }
+            //}
             ?>
             </div>
             <!-- END ROW -->
             <?php
             
-        }
+        //}
     }
 ?>                            
         

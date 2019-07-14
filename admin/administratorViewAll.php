@@ -85,11 +85,17 @@
                                             echo $user_row['telephone'];
                                         echo "</td>";*/
 
-                                        echo"<td> <a href='administratorViewSingle.php?id=".urlencode($id)."' class='btn green btn-outline sbold uppercase'> View </a> </td>";
+                                        if($_SESSION['admin_view_single']=="Yes"){
+                                            echo"<td> <a href='administratorViewSingle.php?id=".urlencode($id)."' class='btn green btn-outline sbold uppercase'> View </a> </td>";
+                                        }
 
-                                        echo"<td> <a href='administratorEdit.php?id=".urlencode($id)."' class='btn yellow btn-outline sbold uppercase'> Edit </a> </td>";
+                                        if($_SESSION['admin_edit']=="Yes"){
+                                            echo"<td> <a href='administratorEdit.php?id=".urlencode($id)."' class='btn yellow btn-outline sbold uppercase'> Edit </a> </td>";
+                                        }
 
-                                        echo"<td> <a href='administratorDelete.php?id=".urlencode($id)."' class='btn red btn-outline sbold uppercase'> Delete </a> </td>";
+                                        if($_SESSION['admin_delete']=="Yes"){
+                                            echo"<td> <a href='administratorDelete.php?id=".urlencode($id)."' class='btn red btn-outline sbold uppercase'> Delete </a> </td>";
+                                        }
 
                                     echo "</tr>";
 

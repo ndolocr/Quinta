@@ -84,11 +84,17 @@
                                         echo $row['size'];
                                     echo "</td>";
 
-                                    echo"<td> <a href='productViewSingle.php?id=".urlencode($id)."' class='btn green btn-outline sbold uppercase'> View </a> </td>";
+                                    if($_SESSION['product_view_single']=="Yes"){
+                                        echo"<td> <a href='productViewSingle.php?id=".urlencode($id)."' class='btn green btn-outline sbold uppercase'> View </a> </td>";
+                                    }
 
-                                    echo"<td> <a href='productEdit.php?id=".urlencode($id)."' class='btn yellow btn-outline sbold uppercase'> Edit </a> </td>";
+                                    if($_SESSION['product_edit']=="Yes"){
+                                        echo"<td> <a href='productEdit.php?id=".urlencode($id)."' class='btn yellow btn-outline sbold uppercase'> Edit </a> </td>";
+                                    }
 
-                                    echo"<td> <a href='productDelete.php?id=".urlencode($id)."' class='btn red btn-outline sbold uppercase'> Delete </a> </td>";
+                                    if($_SESSION['product_delete']=="Yes"){
+                                        echo"<td> <a href='productDelete.php?id=".urlencode($id)."' class='btn red btn-outline sbold uppercase'> Delete </a> </td>";
+                                    }
 
                                 echo "</tr>";
 
