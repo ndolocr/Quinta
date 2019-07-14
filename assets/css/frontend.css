@@ -430,3 +430,21 @@ li a .noofitems {
     -moz-box-shadow:5px 5px 15px #A0A0A0;
     -webkit-box-shadow:5px 5px 15px #A0A0A0;
 }
+
+.category-identifier{
+    overflow: hidden;
+}
+
+.category-identifier img{
+    width: 370px;
+    padding: 3px;
+}
+
+.category-row{
+    margin-top: 15px;
+}
+
+.advert img{
+    padding: 2%;
+    width: 98%;
+}
