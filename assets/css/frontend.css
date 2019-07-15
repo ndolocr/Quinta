@@ -224,6 +224,7 @@ image{
 
 .product-name{
     background: #333333;
+    color: #FFF;
     height: 30px;
     overflow: hidden;
     padding: 10px;
@@ -516,4 +517,8 @@ li a .noofitems {
     font-weight: bold;
     padding: 10px;
 
+}
+
+.cat-prod-body{
+    margin-top: 20px;
 }

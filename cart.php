@@ -27,6 +27,18 @@
 
             <!-- BEGIN ROW -->
             <div class="row">
+                <!-- BEGIN CATEGORY TITLE -->
+                <div class="col-sm-12 product-title-bar">
+                    <div class="title">
+                        Cart
+                    </div>                      
+                </div>
+                <!-- END CATEGORY TITLE -->
+            </div>
+            <!-- END ROW -->
+
+            <!-- BEGIN ROW -->
+            <div class="row">
                 
                 <!-- BEGIN PRODUCT SECTION -->
                 <div class="col-md-7 ">

@@ -1,4 +1,5 @@
 <?php
+    include('include/session.php');
     include('dbfiles/dbconnect.php');
     include('include/header.php');
     
@@ -11,6 +12,7 @@
         $category_result = mysqli_query($connect, $category_query) or die("Unable to get Category records");
         
         while($category_row = mysqli_fetch_assoc($category_result)){
+            $category_id = $category_row['categoryId'];
             $category_name = $category_row['categoryName'];
         }
         
@@ -31,17 +33,14 @@
                 <!-- END CATEGORY TITLE -->
             </div>
             <!-- END ROW -->
-            
-            
-            
-            
+           
             <!-- BEGIN ROW -->
             <div class="row"> 
                 <?php
                     while($product_row = mysqli_fetch_assoc($product_result)){
                         ?>
                         <!-- BEGIN CATEGORY ITEMS -->
-                        <div class="col-md-3">
+                        <div class="col-md-3 cat-prod-body">
                             <a href="product.php?id=<?php echo $product_row['productId']; ?>">
                                 <div class="product-image">
                                     <img src="admin/images/uploads/products/<?php echo $product_row['image']; ?>" />
@@ -50,10 +49,10 @@
                                 
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <div class="product-name">
-                                        <a href="product.php?id=<?php echo $product_row['productId']; ?>"> <?php echo $product_row['productName'] ; ?> </a>
+                                    <div class="product-name sbold uppercase">
+                                        <?php echo $product_row['productName'] ; ?>
                                     </div>
-                                </div>
+                                </div>                                
                             </div>
                                 
                             <div class="row">
@@ -79,7 +78,19 @@
                                         ?>
                                     </div>
                                 </div>
-                                
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <a href="add_to_cart.php?id=<?php echo $product_row['productId']; ?>&url=<?php echo $category_id ?>" class="btn green btn-outline sbold uppercase"> 
+                                        Add to Cart 
+                                    </a>
+                                </div>
+
+                                <div class="col-sm-5">
+                                    <a href="product.php?id=<?php echo $product_row['productId']; ?>" class="btn blue btn-outline sbold uppercase"> 
+                                        View  Product
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <?php
