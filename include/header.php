@@ -112,7 +112,6 @@
                                 </ul>
                             </li>
                             <li> <a href="about.php"> About us </a> </li>
-                            <li> <a href=""> Contact Us </a> </li>
                         </ul>
                     </div>
                     <!--<div class="main-menu">

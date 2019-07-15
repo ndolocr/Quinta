@@ -509,3 +509,11 @@ li a .noofitems {
 .main-menu ul li:hover ul li a{
     color: #333;
 }
+
+
+.about-title{
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px;
+
+}
