@@ -90,6 +90,7 @@ image{
 }
 
 .slideshow{
+    margin-top: 10px;
     background: #eeeeee;
     height: 450px;   
     overflow: hidden;
@@ -118,6 +119,16 @@ image{
     padding-bottom: 10px;
     padding-top: 10px;
     
+}
+
+.upper-bar .logo{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.upper-bar .info{
+    font-size: 15px;
+    font-weight: normal;
 }
 
 /*--------------------------------------------------------------
@@ -447,4 +458,54 @@ li a .noofitems {
 .advert img{
     padding: 2%;
     width: 98%;
+}
+
+.main-menu ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    z-index: 100;
+}
+
+.main-menu{
+    z-index: 300;
+}
+
+.main-menu ul li{
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    opacity: 0.8;
+    text-align: center;;
+    width: 150px;
+    z-index: 100;
+}
+
+.main-menu ul li a{
+    color: #666;
+    display: block;;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.main-menu ul li a:hover{
+    background: #FFF;
+    border: solid 1px #666666;
+    color:#000;
+    z-index: 100;
+}
+
+.main-menu ul li ul li{
+    display: none;
+    z-index: 100;
+}
+
+.main-menu ul li:hover ul li{
+    background: #FFF;
+    display: block;
+    z-index: 100;
+}
+
+.main-menu ul li:hover ul li a{
+    color: #333;
 }

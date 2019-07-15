@@ -66,7 +66,8 @@
             <!-- BEGIN ROW -->
             <div class="row upper-bar">
                 <div class="col-sm-4">
-                    AZURY Traders
+                    <div class="logo"> AZURY Traders</div>
+                    <div class="info"> Your One Stop Shop for all your needs...</div>
                 </div>
                 
                 <div class="col-sm-8">
@@ -93,14 +94,44 @@
             <!-- END ROW -->
             
             <!-- BEGIN MENU ROW-->
-            <div class="row menu">
+            <div class="row">
                 <div class="col-sm-12 col-md-9">
-                    <ul class="nav navbar-nav">
-                        <li> <a href="index.php"> Home </a> </li>
-                        <li> <a href=""> About us </a> </li>
-                        <li> <a href=""> Contact Us </a> </li>
-                    </ul>
+                    <div class="main-menu">
+                        <ul class="nav navbar-nav">
+                            <li> <a href="index.php"> Home </a> </li>
+                            <li class="dropdown">
+                                <a> Products </a>
+                                <ul>
+                                    <?php
+                                        $query = "SELECT * FROM category";
+                                        $result = mysqli_query($connect, $query) or die("Unable to get record");
+                                        while($row = mysqli_fetch_assoc($result)){
+                                    ?>
+                                            <li><a href="category.php?id=<?php echo $row['categoryId']?>"> <?php echo $row['categoryName'] ?></a></li>
+                                    <?php } ?>
+                                </ul>
+                            </li>
+                            <li> <a href="about.php"> About us </a> </li>
+                            <li> <a href=""> Contact Us </a> </li>
+                        </ul>
+                    </div>
+                    <!--<div class="main-menu">
+                        <ul>
+                            <li> <a href="index.php"> Home </a> </li>
+                            <li> <a href=""> About us </a> </li>
+                            <li> 
+                                <a href=""> Product Categories </a> 
+                                <ul>
+                                    <li> <a href=""> About us </a> </li>
+                                    <li> <a href=""> About us </a> </li>
+                                    <li> <a href=""> About us </a> </li>
+                                </ul>
+                            </li>
+                            <li> <a href=""> Contact Us </a> </li>
+                        </ul>
+                    </div>-->
                 </div>
+
 
                 <div class="col-sm-12 col-md-3">
                     <?php
